@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExampleComponent should render the ExampleComponent component 1`] = `
+<div>
+  <p
+    class="exampleComponent"
+  >
+    Hello 
+    world
+    !
+  </p>
+</div>
+`;

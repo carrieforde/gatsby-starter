@@ -3,5 +3,7 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "Meal Planner",
   },
-  plugins: [],
+  plugins: [
+    'gatsby-plugin-typescript'
+  ],
 };

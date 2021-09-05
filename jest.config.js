@@ -1,0 +1,24 @@
+module.exports = {
+  preset: "ts-jest/presets/js-with-babel",
+  transform: {
+    "^.+\\.[jt]sx?$": "<rootDir>/testing-utilities/jest-preprocess.ts",
+  },
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["<rootDir>/testing-utilities/test-utils.ts"],
+  moduleNameMapper: {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/testing-utilities/mocks/file.mock.js",
+    "\\.(css|less|scss)$": "identity-obj-proxy",
+  },
+  testPathIgnorePatterns: ["node_modules", "\\.cache", "<rootDir>.*/public"],
+  transformIgnorePatterns: ["node_modules/(?!(gatsby)/)"],
+  globals: {
+    __PATH_PREFIX__: "",
+    "ts-jest": {
+      tsconfig: "tsconfig.json",
+    },
+  },
+  setupFiles: ["<rootDir>/testing-utilities/loadershim.ts"],
+  testResultsProcessor: "jest-sonar-reporter",
+  moduleDirectories: ["node_modules", "src", __dirname],
+};
